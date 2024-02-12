@@ -109,10 +109,12 @@ Place the API credentials file in the project directory under the name `google_a
 
 Set up a MongoDB database and ensure it is running.
 Set up a MySQL database and ensure it is running.
+
 4.Configure Application:
 
 Copy the `config.sample.ini` file and rename it to `config.ini`.
 Update the `config.ini` file with your Google API credentials, MongoDB, and MySQL connection details.
+
 5.Run the Application:
 
 streamlit run yourfilename.py
