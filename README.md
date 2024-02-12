@@ -100,7 +100,7 @@ Install Required Libraries:
 
 2.Set Up Google API:
 
-Create a Google API project on the `Google Cloud Console`.
+Create a Google API project on the [Google Cloud Console](https://cloud.google.com/cloud-console/).
 
 Obtain API credentials (JSON file) with access to the YouTube Data API v3.
 Place the API credentials file in the project directory under the name `google_api_credentials.json`.
