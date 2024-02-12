@@ -98,22 +98,22 @@ Install Required Libraries:
 
 ```pip install streamlit pymongo sqlalchemy PyMySQL pandas google-api-python-client dotenv```
 
-Set Up Google API:
+2.Set Up Google API:
 
 Create a Google API project on the `Google Cloud Console`.
 
 Obtain API credentials (JSON file) with access to the YouTube Data API v3.
 Place the API credentials file in the project directory under the name `google_api_credentials.json`.
 
-Configure Database:
+3.Configure Database:
 
 Set up a MongoDB database and ensure it is running.
 Set up a MySQL database and ensure it is running.
-Configure Application:
+4.Configure Application:
 
 Copy the `config.sample.ini` file and rename it to `config.ini`.
 Update the `config.ini` file with your Google API credentials, MongoDB, and MySQL connection details.
-Run the Application:
+5.Run the Application:
 
 streamlit run yourfilename.py
 Access the Streamlit application at http://localhost:8501 in your web browser.
