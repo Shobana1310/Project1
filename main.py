@@ -1,3 +1,5 @@
+#------------------------------------------------------------------------------------------------------------------------------------------------------#
+
 from googleapiclient.discovery import build
 import pymongo
 from sqlalchemy import create_engine
@@ -13,7 +15,7 @@ from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 import time
 from PIL import Image
-
+#---------------------------------------------------------------------------------------------------------------------------------------------------#
 #These steps for keep our password safely by using Environment variables
 load_dotenv()
 mysql_password = os.getenv("MYSQL_PASSWORD") #MySQLpassword
@@ -24,7 +26,7 @@ mongo_atlas_password =  os.getenv("MONGO_ATLAS_PASSWORD")  #Mongo_Atlas_password
 # we connect engine for sql and cilent for mongodb
 engine=create_engine(f"mysql+pymysql://root:{mysql_password}@localhost:3306/youtubedata_harvest")
 client=pymongo.MongoClient(f"mongodb+srv://{mongo_atlas_user_name}:{mongo_atlas_password}@cluster0.ehfepgy.mongodb.net/?retryWrites=true&w=majority")
-
+#-----------------------------------------------------------Data scrap ----------------------------------------------------------------------------------#
 #API Connection
 def google_api_client():
     service=build("youtube","v3",developerKey=api_key)    #Build the YouTube API service using the provided API key
@@ -136,8 +138,7 @@ def get_allthe_details_of_channel(channel_id):
     comments=get_comments_details(video_id)                # Retrieve details of comments for each video
     collection.insert_one({"channel_details":channel,"videos_details":videos,"comment_details":comments})   # Insert all the gathered details into a MongoDB collection
     return "yes! uploaded"
-
-
+#-------------------------------------------------------------pushing data into mongodb----------------------------------------------------------------------------------------#
 def update_the_channel_details(channel_id):
     channel=get_details_of_channel(channel_id)           
     playlist_id=get_playlist_id(channel_id)             
@@ -149,7 +150,7 @@ def update_the_channel_details(channel_id):
         {"$set": {"channel_details": channel, "videos_details": videos, "comment_details": comments}})
     st.balloons()
     return "UPDATED SUCCESSFULLY !"
-#----------------------------------------------------------------------Finished data scraping and mongodb pushing functions--------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
 
 # This function for create a cahnnel table in MYSQl in SQL Alchemy method
 def channels_table():
@@ -269,7 +270,7 @@ def tables():
     videos_table()
     comments_table()
     return "Tables Created !"
-#----------------------------------------------------------finished table creating,start streamlit functions-------------------------------------------------------------------------------------
+#----------------------------------------------------------finished table creation,start streamlit functions-------------------------------------------------------------------------------------
 
 # Set the configuration for the Streamlit app page, including title, icon, and layout.
 st.set_page_config(page_title="WebApplication",page_icon=":tada:",layout="wide")
@@ -472,7 +473,7 @@ elif selected=="About Me":
     st.markdown(f"[![LinkedIn]({linkedin_logo})]({linkedin_url})")
     st.header(":e-mail:mailbox: Get In Touch With Me!")
       # Display the contact form using markdown, allowing HTML content.
-    contact_form='''<form action="https://formsubmit.co/shobana13102001@gmail.com" method="POST">   
+    contact_form='''<form action="https://formsubmit.co/Your_email" method="POST">   
      <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
      <input type="hidden" name="_captcha" value="false">
      <input type="text" name="name" placeholder="Your Name" required>
@@ -486,61 +487,5 @@ elif selected=="About Me":
         with open(file_name)as f:
             st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html=True)
     local_css("style.css")
-   
 
-   
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-        
-
-                
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-                
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
+#-----------------------------------------------------------------Finished-----------------------------------------------------------------------------#
