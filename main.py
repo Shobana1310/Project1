@@ -150,7 +150,7 @@ def update_the_channel_details(channel_id):
         {"$set": {"channel_details": channel, "videos_details": videos, "comment_details": comments}})
     st.balloons()
     return "UPDATED SUCCESSFULLY !"
-#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+#-------------------------------------------------------------Table Creation----------------------------------------------------------------------------------------#
 
 # This function for create a cahnnel table in MYSQl in SQL Alchemy method
 def channels_table():
