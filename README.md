@@ -81,36 +81,36 @@ streamlit run yourfilename.py
 Access the Streamlit application at http://localhost:8501 in your web browser.
     
 ## methods
-Data Collection from YouTube API:
+## Data Collection from YouTube API:
 
 Utilized YouTube API with a valid API key.
 Gathered data including channel details, video details, and comments.
 
-Function Creation:
+## Function Creation:
 
 Developed specific functions for handling different aspects of the data.
 Functions for obtaining channel details, video details, and comments details were created.
 
-Data Storage in MongoDB Atlas:
+## Data Storage in MongoDB Atlas:
 
 Established a connection to MongoDB Atlas, a cloud-based MongoDB service.
 Pushed the collected JSON data into MongoDB Atlas.
 
-MySQL Table Creation:
+## MySQL Table Creation:
 
 Established a connection to MySQL.
 Created a table structure in MySQL for storing the YouTube data.
 
-Data Transfer from MongoDB to MySQL:
+## Data Transfer from MongoDB to MySQL:
 
 Used SQL Alchemy, a SQL toolkit for Python, to facilitate the data transfer.
 Transferred data from MongoDB to MySQL using appropriate methods.
 
-SQL Query Writing:
+## SQL Query Writing:
 
 Developed SQL queries to retrieve, manipulate, or analyze data stored in the MySQL database.
 
-Integration with Streamlit:
+## Integration with Streamlit:
 
 Connected the project with Streamlit, a Python library for creating web applications with data visualization.
 Utilized Streamlit to present and interact with the YouTube data.
