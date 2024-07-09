@@ -25,8 +25,6 @@ import plotly.graph_objects as go
 import streamlit.components.v1 as components
 
 
-#These steps for keep our password safely by using Environment variables
-load_dotenv()
 mysql_password = st.secrets["MYSQL_PASSWORD"] #MySQLpassword
 api_key = st.secrets["API_KEY"] #Youtube_API_V3
 mongo_atlas_user_name = st.secrets["MONGO_ATLAS_USER_NAME"] #Mongo_Atlas_User_name
