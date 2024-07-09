@@ -1,2 +1,2 @@
 unixodbc
-msodbcsql18=18.3.3.1-1 ACCEPT_EULA=Y
+msodbcsql18
