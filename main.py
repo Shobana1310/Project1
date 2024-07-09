@@ -837,14 +837,7 @@ elif selected=="Channel Analysis":
                         """
                 components.html(video_html, height=300)
         charts()
-def check_driver():
-    drivers = pyodbc.drivers()
-    if 'ODBC Driver 18 for SQL Server' in drivers:
-        st.write("ODBC Driver 18 for SQL Server is installed.")
-    else:
-        st.write("ODBC Driver 18 for SQL Server is NOT installed.")
 
-check_driver()
 
 elif selected=='Filter Options':
     
