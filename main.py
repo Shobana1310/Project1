@@ -29,15 +29,15 @@ import streamlit.components.v1 as components
 
 #These steps for keep our password safely by using Environment variables
 load_dotenv()
-mysql_password = os.getenv("MYSQL_PASSWORD") #MySQLpassword
-api_key = os.getenv("API_KEY") #Youtube_API_V3
-mongo_atlas_user_name = os.getenv("MONGO_ATLAS_USER_NAME") #Mongo_Atlas_User_name
-mongo_atlas_password =  os.getenv("MONGO_ATLAS_PASSWORD")  #Mongo_Atlas_password
+mysql_password = st.secrets["MYSQL_PASSWORD"] #MySQLpassword
+api_key = st.secrets["API_KEY"] #Youtube_API_V3
+mongo_atlas_user_name = st.secrets["MONGO_ATLAS_USER_NAME"] #Mongo_Atlas_User_name
+mongo_atlas_password =  st.secrets["MONGO_ATLAS_PASSWORD"]  #Mongo_Atlas_password
 
-server = os.getenv("SERVER")
-database = os.getenv("DATABASE")
-username = os.getenv("USERNAME")
-password = os.getenv("AZURE_PASSWORD")
+server = st.secrets["SERVER"]
+database = st.secrets["DATABASE"]
+username = st.secrets["USERNAME"]
+password = st.secrets["AZURE_PASSWORD"]
 driver = 'ODBC Driver 18 for SQL Server'
 
 params = urllib.parse.quote_plus(f"""
