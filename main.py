@@ -47,10 +47,11 @@ TrustServerCertificate=no;
 Connection Timeout=30;
 """)
 
-conn_str = f'mssql+pyodbc:///?autocommit=true&odbc_connect={params}&charset=\'utf8\''
+# conn_str = f'mssql+pyodbc:///?autocommit=true&odbc_connect={params}&charset=\'utf8\''
 
-engine = create_engine(conn_str, echo=True)
-
+# engine = create_engine(conn_str, echo=True)
+connection_string = "mssql+pyodbc://username:password@server/database?driver=ODBC+Driver+18+for+SQL+Server"
+engine = create_engine(connection_string)
 
 # we connect engine for sql and cilent for mongodb
 client=pymongo.MongoClient(f"mongodb+srv://{mongo_atlas_user_name}:{mongo_atlas_password}@cluster0.ehfepgy.mongodb.net/?retryWrites=true&w=majority")
