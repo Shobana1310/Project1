@@ -5,6 +5,7 @@ from googleapiclient.errors import HttpError
 import pandas as pd
 import streamlit as st
 import pymysql
+import pymssql
 import requests
 from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
@@ -34,24 +35,10 @@ server = st.secrets["SERVER"]
 database = st.secrets["DATABASE"]
 username = st.secrets["USERNAME"]
 password = st.secrets["AZURE_PASSWORD"]
-driver = 'ODBC Driver 18 for SQL Server'
 
-params = urllib.parse.quote_plus(f"""
-Driver={driver};
-Server=tcp:{server},1433;
-Database={database};
-Uid={username};
-Pwd={password};
-Encrypt=yes;
-TrustServerCertificate=no;
-Connection Timeout=30;
-""")
+conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8"
 
-# conn_str = f'mssql+pyodbc:///?autocommit=true&odbc_connect={params}&charset=\'utf8\''
-
-# engine = create_engine(conn_str, echo=True)
-connection_string = "mssql+pyodbc://username:password@server/database?driver=ODBC+Driver+18+for+SQL+Server"
-engine = create_engine(connection_string)
+engine = create_engine(conn_str, echo=True)
 
 # we connect engine for sql and cilent for mongodb
 client=pymongo.MongoClient(f"mongodb+srv://{mongo_atlas_user_name}:{mongo_atlas_password}@cluster0.ehfepgy.mongodb.net/?retryWrites=true&w=majority")
