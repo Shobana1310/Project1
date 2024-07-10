@@ -40,7 +40,7 @@ password = st.secrets["AZURE_PASSWORD"]
 
 # engine = create_engine(conn_str, echo=True)
 
-
+tds_version = 7.4 
 query_params = urllib.parse.urlencode({
     'tds_version': tds_version,
     'charset': 'utf8'
