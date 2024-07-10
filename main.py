@@ -37,7 +37,9 @@ username = st.secrets["USERNAME"]
 password = st.secrets["AZURE_PASSWORD"]
 
 #conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8"
-conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8&pool_size=50&max_overflow=100"
+port=1433
+conn_str = f"mssql+pymssql://{username}:{password}@{server}:{port}/{database}?charset=utf8"
+
 engine = create_engine(conn_str, echo=True)
 
 
