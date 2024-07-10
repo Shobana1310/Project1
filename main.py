@@ -36,18 +36,11 @@ database = st.secrets["DATABASE"]
 username = st.secrets["USERNAME"]
 password = st.secrets["AZURE_PASSWORD"]
 
-# conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8"
+conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8"
 
-# engine = create_engine(conn_str, echo=True)
-
-tds_version = 7.4 
-query_params = urllib.parse.urlencode({
-    'tds_version': tds_version,
-    'charset': 'utf8'
-})
-
-conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?{query_params}"
 engine = create_engine(conn_str, echo=True)
+
+
 # we connect engine for sql and cilent for mongodb
 client=pymongo.MongoClient(f"mongodb+srv://{mongo_atlas_user_name}:{mongo_atlas_password}@cluster0.ehfepgy.mongodb.net/?retryWrites=true&w=majority")
 
