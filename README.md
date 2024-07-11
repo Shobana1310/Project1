@@ -1,8 +1,19 @@
 
 # Project Title
 
-Youtube data harvesting and Warehousing using SQL,MongoDB &Streamlit
+Youtube Analysis Tool 
+[**Click Here To See The App**](https://youtube-analysis-tool-1.streamlit.app/)
 
+## Use Cases
+
+**For YouTube Content Creators**
+Understand your audience and optimize the content strategy.Identify top-performing videos also and aim to achieve similar success
+
+**For Marketers**
+Analyze competitor channels and refine your marketing strategy.Measure the effectiveness of video campaigns and promotions
+
+**For Analyst**
+Gain in-depth insights into YouTube channel performance.Use data-driven insights to make informed decisions
 
 ## Tech Stack
 
@@ -10,19 +21,8 @@ Python,
 Youtube Api Integration,
 MongoDB Cloud Atlas,
 SQL,
-Streamlit
-
-
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-`mysql_password`
-`MongoAtlasUserName`
-`MongoAtlas Password`
-
+Streamlit,
+Azure 
 
 
 ## 🛠 Skills
@@ -41,6 +41,8 @@ UI Development: Streamlit for user-friendly interfaces.
 Data Warehousing: Transforming and loading data between MongoDB and MySQL.
 
 IDE: Visual Studio Code.
+
+Cloud Management:Azure
 
 Problem-Solving:
 Ability to identify and resolve issues that may arise during the data extraction, transformation, and loading processes.
