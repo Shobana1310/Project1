@@ -151,6 +151,9 @@ If you wish to contribute to the project, you are always welcome. If you encount
 
 [Pandas Documentation](https://pandas.pydata.org/docs/)
 
+## Demo Video
+![Project](https://github.com/Shobana1310/GitHub-User-Analytics-and-Recommendation-System/raw/main/images/projectvideo-ezgif.com-video-to-gif-converter.gif)
+
 
 ## 🔗 Contact
 
