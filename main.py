@@ -480,20 +480,20 @@ elif selected=="Channel Analysis":
         st.markdown(f"<h1 style='font-size: 45px; font-family: {font_family};'>START TO ANALYSE YOUR OWN YOUTUBE CHANNEL <img src='{youtube_logo_url}' width='65' height='45'></h1>", unsafe_allow_html=True)
     channel_id= st.text_input(label="", placeholder="Enter The Youtube Channel ID")
     if channel_id:
-        # ids=[]
-        # database=client["youtube_data_harvesting"]
-        # collection=database["channel_informations"]
-        # for i in collection.find({},{"_id":0,"channel_details":1}):      
-        #         for j in range(len(i["channel_details"])):
-        #             ids.append(i["channel_details"][j]["channel_id"])
-        # if channel_id in ids:
-        #     with st.spinner("Channel ID is Already Exist In The Database, It's Updating Now..."):
-        #         update_the_channel_details(channel_id)
-        #         tables()
-        # else:
-        #     with st.spinner("Getting Your Data..."):
-        #         get_allthe_details_of_channel(channel_id)
-        #         tables()
+        ids=[]
+        database=client["youtube_data_harvesting"]
+        collection=database["channel_informations"]
+        for i in collection.find({},{"_id":0,"channel_details":1}):      
+                for j in range(len(i["channel_details"])):
+                    ids.append(i["channel_details"][j]["channel_id"])
+        if channel_id in ids:
+            with st.spinner("Channel ID is Already Exist In The Database, It's Updating Now..."):
+                update_the_channel_details(channel_id)
+                tables()
+        else:
+            with st.spinner("Getting Your Data..."):
+                get_allthe_details_of_channel(channel_id)
+                tables()
 
         def get_channel_data(channel_id):
             query = text('SELECT * FROM channels WHERE channel_id=:channel_id')
