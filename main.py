@@ -36,11 +36,28 @@ database = st.secrets["DATABASE"]
 username = st.secrets["USERNAME"]
 password = st.secrets["AZURE_PASSWORD"]
 
-#conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8"
-port=1433
-conn_str = f"mssql+pymssql://{username}:{password}@{server}:{port}/{database}?charset=utf8"
+driver = 'ODBC Driver 17 for SQL Server'
+
+params = urllib.parse.quote_plus(f"""
+Driver={driver};
+Server=tcp:{server},1433;
+Database={database};
+Uid={username};
+Pwd={password};
+Encrypt=yes;
+TrustServerCertificate=no;
+Connection Timeout=30;
+""")
+
+conn_str = f'mssql+pyodbc:///?autocommit=true&odbc_connect={params}&charset=\'utf8\''
 
 engine = create_engine(conn_str, echo=True)
+
+
+
+#conn_str = f"mssql+pymssql://{username}:{password}@{server}/{database}?charset=utf8"
+
+# engine = create_engine(conn_str, echo=True)
 
 
 # we connect engine for sql and cilent for mongodb
