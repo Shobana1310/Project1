@@ -26,26 +26,24 @@ Azure
 
 
 ## 🛠 Skills
-Programming: Proficient in Python .
+**Programming**: Proficient in Python .
 
-API Integration: Experienced with YouTube API.
+**API Integration**: Experienced with YouTube API.
 
-Data Management: MongoDB (Atlas) and MySQL.
+**Data Management**: MongoDB (Atlas) and MySQL.
 
-Data Processing: Pandas, SQL for analysis.
+**Data Processing**: Pandas, SQL for analysis.
 
-ETL Process: PyMongo and SqlAlchemy for MongoDB and MySQL.
+**ETL Process**: PyMongo and SqlAlchemy for MongoDB and MySQL.
 
-UI Development: Streamlit for user-friendly interfaces.
+**UI Development**: Streamlit for user-friendly interfaces.
 
-Data Warehousing: Transforming and loading data between MongoDB and MySQL.
+**Data Warehousing**: Transforming and loading data between MongoDB and MySQL.
 
-IDE: Visual Studio Code.
+**IDE**: Visual Studio Code.
 
-Cloud Management:Azure
+**Cloud Management**: Azure
 
-Problem-Solving:
-Ability to identify and resolve issues that may arise during the data extraction, transformation, and loading processes.
 
 
 
